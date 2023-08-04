@@ -203,10 +203,22 @@ function initRouter() {
     }
   } else {
     return new Promise(resolve => {
-      getAsyncRoutes().then(({ data }) => {
-        handleAsyncRoutes(cloneDeep(data));
-        resolve(router);
+      // getAsyncRoutes().then(({ data }) => {
+      //   handleAsyncRoutes(cloneDeep(data));
+      //   resolve(router);
+      // });
+      const modules: Record<string, any> = import.meta.glob(
+        ["./asyncRouter/**/*.ts"],
+        {
+          eager: true
+        }
+      );
+      const data = [];
+      Object.keys(modules).forEach(key => {
+        data.push(modules[key].default);
       });
+      handleAsyncRoutes(cloneDeep(data));
+      resolve(router);
     });
   }
 }

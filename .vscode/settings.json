@@ -27,5 +27,27 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "iconify.excludes": ["el"]
+  "i18n-ally.localesPaths": "locales",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.namespace": true,
+  "i18n-ally.enabledParsers": ["yaml", "js"],
+  "i18n-ally.sourceLanguage": "en",
+  "i18n-ally.displayLanguage": "zh-CN",
+  "i18n-ally.enabledFrameworks": ["vue"],
+  "iconify.excludes": ["el"],
+
+  // 控制相关文件嵌套展示
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "$(capture).test.ts, $(capture).test.tsx",
+    "*.tsx": "$(capture).test.ts, $(capture).test.tsx",
+    "*.env": "$(capture).env.*",
+    "Dockerfile": ".dockerignore",
+    "CHANGELOG.md": "CHANGELOG*,commitlint.config.js,.commitlintrc.js,commitlint.config.js.bk",
+    "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,LICENSE,.gitattributes,.gitignore,.gitpod.yml,CNAME,README*,.npmrc,.browserslistrc",
+    ".eslintrc.js": ".eslintignore,.prettierignore,.stylelintignore,.prettierrc.js,.stylelintrc.js,.markdownlint.json,.editorconfig,postcss.config,stylelint.config.js,postcss.config.js,tailwind.config.js,.commitlintrc.js"
+  },
+  "terminal.integrated.scrollback": 10000
 }

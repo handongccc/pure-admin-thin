@@ -21,7 +21,8 @@
     "lint:pretty": "pretty-quick --staged",
     "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
     "prepare": "husky install",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "cz": "pnpm czg"
   },
   "browserslist": [
     "> 1%",
@@ -36,6 +37,7 @@
     "@vueuse/motion": "^2.0.0",
     "animate.css": "^4.1.1",
     "axios": "^1.4.0",
+    "czg": "^1.7.0",
     "dayjs": "^1.11.8",
     "echarts": "^5.4.2",
     "element-plus": "2.3.6",
